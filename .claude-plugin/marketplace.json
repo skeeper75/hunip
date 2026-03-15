@@ -10,8 +10,11 @@
     {
       "name": "shopby-policy",
       "description": "shopby Enterprise 정책 자문. 13개 도메인, 95개 IA 기능 분류(NATIVE/SKIN/CUSTOM/EXTERNAL), 인쇄업계 벤치마크.",
-      "version": "1.0.0",
-      "author": { "name": "innojini", "email": "skeeper75@gmail.com" },
+      "version": "1.1.0",
+      "author": {
+        "name": "innojini",
+        "email": "skeeper75@gmail.com"
+      },
       "source": "./plugins/shopby-policy",
       "category": "domain"
     },
@@ -19,7 +22,10 @@
       "name": "printing-foundation",
       "description": "인쇄 산업 기초 지식. 조판 계산, CTP 판수, 접지 배열, 책등/오시, 크립 보정, 용지 규격.",
       "version": "1.0.0",
-      "author": { "name": "innojini", "email": "skeeper75@gmail.com" },
+      "author": {
+        "name": "innojini",
+        "email": "skeeper75@gmail.com"
+      },
       "source": "./plugins/printing-foundation",
       "category": "domain"
     },
@@ -27,7 +33,10 @@
       "name": "huni-design-system",
       "description": "후니프린팅 디자인 시스템. 컴포넌트 카탈로그, 11개 상품 섹션, 디자인 토큰, shadcn/ui 패턴.",
       "version": "1.0.0",
-      "author": { "name": "innojini", "email": "skeeper75@gmail.com" },
+      "author": {
+        "name": "innojini",
+        "email": "skeeper75@gmail.com"
+      },
       "source": "./plugins/huni-design-system",
       "category": "design"
     }

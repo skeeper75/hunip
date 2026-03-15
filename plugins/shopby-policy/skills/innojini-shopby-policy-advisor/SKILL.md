@@ -37,6 +37,15 @@ Purpose: Provide policy consultation for Huni Printing site renewal based on sho
 - Industry Benchmarks: `${CLAUDE_SKILL_DIR}/references/industry-benchmarks.md`
 - shopby Capability Matrix: `${CLAUDE_SKILL_DIR}/references/shopby-capability-matrix.md`
 
+### Operations Reference (운영 참조)
+- Order Process: `${CLAUDE_SKILL_DIR}/../../references/order-process.md` - 주문 프로세스, MES 연동, 자동알림 11종
+- Production Flow: `${CLAUDE_SKILL_DIR}/../../references/production-flow.md` - 17개 공정 Case, 공정 상태 트래킹
+- File Processing: `${CLAUDE_SKILL_DIR}/../../references/file-processing.md` - Printly 파일처리 자동화 (PDF 검증·변환·최적화 파이프라인)
+
+### Policy Documents (정책 문서)
+- Policy Index: `${CLAUDE_SKILL_DIR}/../../policies/INDEX.md` - 13개 정책 도메인 인덱스
+- Read specific policy files from `${CLAUDE_SKILL_DIR}/../../policies/POLICY-*.md` based on the query domain
+
 ### Optional External References
 The following are NOT bundled in the plugin. They must exist in the user's project directory:
 - shopby Enterprise Docs: `ref/shopby/shopby_enterprise_docs/`

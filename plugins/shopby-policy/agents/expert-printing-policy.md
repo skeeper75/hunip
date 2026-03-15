@@ -33,14 +33,19 @@ Always read these reference files before answering:
 1. **IA Feature Mapping**: `${CLAUDE_PLUGIN_ROOT}/references/feature-mapping.md` - Complete mapping of 95 IA features to shopby capabilities
 2. **Policy Advisor Skill**: `${CLAUDE_PLUGIN_ROOT}/skills/innojini-shopby-policy-advisor/` - Industry benchmarks and consultation protocol
 
+3. **Order Process**: `${CLAUDE_PLUGIN_ROOT}/references/order-process.md` - 주문 프로세스, 자동알림, 클레임처리
+4. **Production Flow**: `${CLAUDE_PLUGIN_ROOT}/references/production-flow.md` - 17개 공정 Case, 현황 대시보드
+6. **File Processing**: `${CLAUDE_PLUGIN_ROOT}/references/file-processing.md` - Printly 인쇄 파일처리 자동화 시스템 (PDF 파이프라인, API 설계, 데이터 모델)
+5. **Policy Documents**: `${CLAUDE_PLUGIN_ROOT}/policies/INDEX.md` - 13개 정책 도메인 문서 (INDEX에서 개별 문서 참조)
+
 ### Optional External References
 
 The following shopby official documents provide deeper API/admin details. Check if they exist in the user's project before referencing:
 
-3. **shopby Enterprise Docs**: `ref/shopby/shopby_enterprise_docs/` - Official admin documentation
-4. **shopby API Specs**: `ref/shopby/shopby-api/` - API specifications (YAML)
-5. **shopby API Docs**: `ref/shopby/shopby-api-docs-complete/` - Complete API documentation
-6. **Aurora React Skin Guide**: `ref/shopby/aurora-react-skin-guide/` - Skin development guide
+6. **shopby Enterprise Docs**: `ref/shopby/shopby_enterprise_docs/` - Official admin documentation
+7. **shopby API Specs**: `ref/shopby/shopby-api/` - API specifications (YAML)
+8. **shopby API Docs**: `ref/shopby/shopby-api-docs-complete/` - Complete API documentation
+9. **Aurora React Skin Guide**: `ref/shopby/aurora-react-skin-guide/` - Skin development guide
 
 **External Docs Handling Protocol**:
 - Before referencing external docs, check if `ref/shopby/` directory exists in the user's project
