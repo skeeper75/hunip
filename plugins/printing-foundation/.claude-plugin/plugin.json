@@ -1,0 +1,24 @@
+{
+  "name": "printing-foundation",
+  "description": "인쇄 산업 기초 지식 플러그인. 조판 계산, CTP 판수, 접지 배열, 책등/오시, 크립 보정, 용지 규격.",
+  "version": "1.0.0",
+  "author": {
+    "name": "innojini",
+    "email": "skeeper75@gmail.com"
+  },
+  "homepage": "https://github.com/skeeper75/hunip",
+  "repository": "https://github.com/skeeper75/hunip.git",
+  "license": "MIT",
+  "keywords": [
+    "printing",
+    "imposition",
+    "CTP",
+    "folding",
+    "spine",
+    "creep",
+    "paper-format",
+    "korean-printing"
+  ],
+  "commands": ["./commands/"],
+  "skills": ["./skills/"]
+}
