@@ -1,24 +1,7 @@
 {
   "name": "huni-design-system",
-  "description": "후니프린팅 디자인 시스템 플러그인. 컴포넌트 카탈로그, 11개 상품 섹션, 디자인 토큰, shadcn/ui 패턴.",
-  "version": "1.0.0",
+  "description": "후니프린팅 디자인 시스템 플러그인. 컴포넌트 카탈로그(14개), 11개 상품 섹션, 디자인 토큰, shadcn/ui + Tailwind CSS 패턴 제공.",
   "author": {
-    "name": "innojini",
-    "email": "skeeper75@gmail.com"
-  },
-  "homepage": "https://github.com/skeeper75/hunip",
-  "repository": "https://github.com/skeeper75/hunip.git",
-  "license": "MIT",
-  "keywords": [
-    "huni",
-    "printing",
-    "design-system",
-    "figma",
-    "shadcn-ui",
-    "radix",
-    "tailwind",
-    "korean-printing"
-  ],
-  "commands": ["./commands/"],
-  "skills": ["./skills/"]
+    "name": "innojini"
+  }
 }
