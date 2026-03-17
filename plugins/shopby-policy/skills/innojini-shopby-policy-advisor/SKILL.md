@@ -24,6 +24,8 @@ tools:
   - Glob
   - WebSearch
   - WebFetch
+  - mcp__context7__resolve-library-id
+  - mcp__context7__get-library-docs
 ---
 
 # shopby Policy Advisor for Huni Printing
@@ -46,15 +48,30 @@ Purpose: Provide policy consultation for Huni Printing site renewal based on sho
 - Policy Index: `${CLAUDE_SKILL_DIR}/../../policies/INDEX.md` - 13개 정책 도메인 인덱스
 - Read specific policy files from `${CLAUDE_SKILL_DIR}/../../policies/POLICY-*.md` based on the query domain
 
-### Optional External References
-The following are NOT bundled in the plugin. They must exist in the user's project directory:
+### Context7 라이브러리 참조 (shopby 공식 문서)
+
+정책 자문 시 Context7 라이브러리를 활용하여 최신 shopby 공식 문서를 실시간 조회합니다.
+
+| 라이브러리 | Context7 검색 키워드 | 용도 |
+|-----------|-------------------|------|
+| **shopby** | `shopby` | shopby 플랫폼 전반 문서 (개요, 기능, 설정) |
+| **shopby 관리자 메뉴얼** | `shopby 관리자 메뉴얼` | shopby 어드민 관리자 메뉴얼 (메뉴 경로, 설정 방법) |
+| **shopby API** | `shopby api` | shopby 프론트/쇼핑몰 API 문서 (shop API 엔드포인트) |
+| **shopby Server API** | `shopby server api` | shopby 서버/백엔드 API 문서 (admin/manage API 엔드포인트) |
+
+**활용 방법**:
+1. `mcp__context7__resolve-library-id` 도구로 라이브러리 ID 확인
+2. `mcp__context7__get-library-docs` 도구로 관련 문서 조회
+3. 조회 결과를 정책 자문에 반영 (관리자 경로, API 엔드포인트 등)
+
+### Optional External References (로컬 문서)
+프로젝트에 로컬 문서가 배치된 경우 추가 참조 가능:
 - shopby Enterprise Docs: `ref/shopby/shopby_enterprise_docs/`
 - shopby API Specs: `ref/shopby/shopby-api/`
 - shopby API Docs: `ref/shopby/shopby-api-docs-complete/`
 - Aurora React Skin Guide: `ref/shopby/aurora-react-skin-guide/`
 
-When external docs are unavailable, proceed with bundled data only.
-For detailed API info, guide users: "상세 API 정보는 shopby Enterprise 문서가 필요합니다. `ref/shopby/` 디렉토리에 shopby 공식 문서를 배치하세요."
+Context7 라이브러리를 우선 활용하고, 로컬 문서는 보조 참조로 사용합니다.
 
 ### Feature Classification System
 
@@ -209,15 +226,20 @@ Key decisions:
 When a user asks a policy question:
 
 1. IDENTIFY which domain(s) the question relates to
-2. READ the feature-mapping.md for the specific features
-3. CLASSIFY as NATIVE / SKIN / CUSTOM / EXTERNAL
-4. PROVIDE:
+2. QUERY Context7 라이브러리로 shopby 공식 문서 조회:
+   - 관리자 설정 → `shopby 관리자 메뉴얼` 검색
+   - 프론트 API → `shopby api` 검색
+   - 서버 API → `shopby server api` 검색
+   - 플랫폼 전반 → `shopby` 검색
+3. READ the feature-mapping.md for the specific features
+4. CLASSIFY as NATIVE / SKIN / CUSTOM / EXTERNAL
+5. PROVIDE:
    - What shopby offers natively (with specific admin menu path or API endpoint)
    - What needs skin customization (with Aurora React skin approach)
    - What needs custom development (with recommended architecture)
    - Industry benchmark from Korean printing sites
    - Policy decision checklist (what the user needs to decide)
-5. FORMAT response as structured policy recommendation
+6. FORMAT response as structured policy recommendation
 
 ## Response Template
 

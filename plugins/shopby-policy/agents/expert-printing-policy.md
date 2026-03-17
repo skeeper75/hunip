@@ -38,9 +38,28 @@ Always read these reference files before answering:
 6. **File Processing**: `${CLAUDE_PLUGIN_ROOT}/references/file-processing.md` - Printly 인쇄 파일처리 자동화 시스템 (PDF 파이프라인, API 설계, 데이터 모델)
 5. **Policy Documents**: `${CLAUDE_PLUGIN_ROOT}/policies/INDEX.md` - 13개 정책 도메인 문서 (INDEX에서 개별 문서 참조)
 
-### Optional External References
+### Context7 라이브러리 참조 (shopby 공식 문서)
 
-The following shopby official documents provide deeper API/admin details. Check if they exist in the user's project before referencing:
+정책 자문 시 아래 Context7 라이브러리를 활용하여 최신 shopby 공식 문서를 참조합니다.
+`mcp__context7__resolve-library-id`로 라이브러리 ID를 확인한 후, `mcp__context7__get-library-docs`로 관련 문서를 조회합니다.
+
+| No | 라이브러리 | Context7 검색 키워드 | 용도 |
+|----|-----------|-------------------|------|
+| 1 | **shopby** | `shopby` | shopby 플랫폼 전반 문서 (개요, 기능, 설정) |
+| 2 | **shopby 관리자 메뉴얼** | `shopby 관리자 메뉴얼` | shopby 어드민 관리자 메뉴얼 (메뉴 경로, 설정 방법) |
+| 3 | **shopby API** | `shopby api` | shopby 프론트/쇼핑몰 API 문서 (shop API 엔드포인트) |
+| 4 | **shopby Server API** | `shopby server api` | shopby 서버/백엔드 API 문서 (admin/manage API 엔드포인트) |
+
+**Context7 활용 프로토콜**:
+1. 정책 질문을 받으면, 해당 도메인에 관련된 Context7 라이브러리를 먼저 조회
+2. `mcp__context7__resolve-library-id`로 라이브러리 ID를 확인 (검색 키워드 사용)
+3. `mcp__context7__get-library-docs`로 관련 문서 내용 조회
+4. 조회된 공식 문서 정보를 기반으로 정확한 관리자 경로, API 엔드포인트 제공
+5. Context7에서 정보를 찾지 못한 경우, 번들된 데이터(feature-mapping, industry benchmarks, capability matrix)로 진행
+
+### Optional External References (로컬 문서)
+
+프로젝트에 로컬 문서가 배치된 경우 추가 참조 가능:
 
 6. **shopby Enterprise Docs**: `ref/shopby/shopby_enterprise_docs/` - Official admin documentation
 7. **shopby API Specs**: `ref/shopby/shopby-api/` - API specifications (YAML)
@@ -48,10 +67,9 @@ The following shopby official documents provide deeper API/admin details. Check 
 9. **Aurora React Skin Guide**: `ref/shopby/aurora-react-skin-guide/` - Skin development guide
 
 **External Docs Handling Protocol**:
-- Before referencing external docs, check if `ref/shopby/` directory exists in the user's project
-- If external docs are NOT available, proceed with bundled data (feature-mapping, industry benchmarks, capability matrix)
-- When detailed API info is needed but external docs aren't available, include guidance:
-  "상세 API 정보는 shopby Enterprise 문서가 필요합니다. `ref/shopby/` 디렉토리에 shopby 공식 문서를 배치하세요."
+- Context7 라이브러리를 우선 활용하고, 로컬 문서는 보조 참조로 사용
+- Context7에서 충분한 정보를 얻지 못한 경우, 로컬 `ref/shopby/` 디렉토리 확인
+- 로컬 문서도 없는 경우, 번들된 데이터로 진행
 
 ## Classification System
 
@@ -95,8 +113,12 @@ Determine which of the 13 domains the question relates to.
 
 ### Step 2: Read Reference Data
 - Read `${CLAUDE_PLUGIN_ROOT}/references/feature-mapping.md` for the specific feature section
-- If available, read relevant shopby docs for the feature
-- If available, read shopby API spec if API details are needed
+- Context7로 shopby 공식 문서 조회:
+  - 관리자 설정 관련 → `shopby 관리자 메뉴얼` 라이브러리 조회
+  - 프론트 API 관련 → `shopby api` 라이브러리 조회
+  - 서버/백엔드 API 관련 → `shopby server api` 라이브러리 조회
+  - 플랫폼 전반 → `shopby` 라이브러리 조회
+- 로컬 문서가 있는 경우 추가 참조 (`ref/shopby/`)
 
 ### Step 3: Analyze & Classify
 For each feature involved:
